@@ -8,6 +8,7 @@ import android.view.View
 import android.view.MotionEvent
 import android.content.Context
 import android.app.Activity
+import android.content.pm.ActivityInfo
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.Color
@@ -232,6 +233,7 @@ class SquareRotateStepView(ctx : Context) : View(ctx) {
     companion object {
         fun create(activity : Activity) : SquareRotateStepView {
             val view : SquareRotateStepView = SquareRotateStepView(activity)
+            activity.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE 
             activity.setContentView(view)
             return view
         }
