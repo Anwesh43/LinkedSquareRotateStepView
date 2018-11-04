@@ -233,7 +233,7 @@ class SquareRotateStepView(ctx : Context) : View(ctx) {
         fun create(activity : Activity) : SquareRotateStepView {
             val view : SquareRotateStepView = SquareRotateStepView(activity)
             activity.setContentView(view)
-            return view 
+            return view
         }
     }
 }
