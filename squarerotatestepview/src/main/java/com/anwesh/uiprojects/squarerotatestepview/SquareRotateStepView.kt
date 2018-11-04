@@ -203,4 +203,27 @@ class SquareRotateStepView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : SquareRotateStepView) {
+
+        private val animator : Animator = Animator(view)
+
+        private val srs : SquareRotateStep = SquareRotateStep(0)
+
+        fun render(canvas : Canvas, paint : Paint) {
+            canvas.drawColor(Color.parseColor("#BDBDBD"))
+            srs.draw(canvas, paint)
+            animator.animate {
+                srs.update {i, scl ->
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            srs.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
