@@ -228,4 +228,12 @@ class SquareRotateStepView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+        fun create(activity : Activity) : SquareRotateStepView {
+            val view : SquareRotateStepView = SquareRotateStepView(activity)
+            activity.setContentView(view)
+            return view 
+        }
+    }
 }
