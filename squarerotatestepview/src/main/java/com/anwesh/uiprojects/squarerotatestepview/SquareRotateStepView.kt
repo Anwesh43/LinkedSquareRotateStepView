@@ -62,7 +62,7 @@ fun Canvas.drawSRSNode(i : Int, scale : Float, paint : Paint) {
             val sc : Float = sc1.divideScale(lines, j)
             save()
             rotate(deg * j)
-            translate(0f, size/2)
+            translate(0f, size)
             drawLine(size, 0f, size - 2 * size * sc, 0f, paint)
             restore()
         }
@@ -233,7 +233,7 @@ class SquareRotateStepView(ctx : Context) : View(ctx) {
     companion object {
         fun create(activity : Activity) : SquareRotateStepView {
             val view : SquareRotateStepView = SquareRotateStepView(activity)
-            activity.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE 
+            activity.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
             activity.setContentView(view)
             return view
         }
